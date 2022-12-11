@@ -52,6 +52,24 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
+    flavorDimensions "default"
+    productFlavors{
+        dev{
+            dimension "default"
+            resValue "string", "app_name", "DMovie"
+            buildConfigField "String","API_KEY",'"1fcdf444872f8ffb1777e0e6438f8c4b"'
+        }
+        qa{
+            dimension "default"
+            resValue "string", "app_name", "QMovie"
+            buildConfigField "String","API_KEY",'"1fcdf444872f8ffb1777e0e6438f8c4b"'
+        }
+        prod{
+            dimension "default"
+            resValue "string", "app_name", "PMovie"
+            buildConfigField("String", "API_KEY", '"development"')
+        }
+    }
 
     buildTypes {
         release {
@@ -60,7 +78,9 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+   
 }
+
 
 flutter {
     source '../..'
