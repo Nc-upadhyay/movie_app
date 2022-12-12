@@ -34,8 +34,8 @@ jobs:
           flutter-version: "3.0.0"
           channel: 'stable'
       # 12
-      - name: Get dependencies
-        run: flutter pub get
+   #   - name: Get dependencies
+    #    run: flutter pub get
 
       # Runs a set of commands using the runners shell
       - name: Start release build
