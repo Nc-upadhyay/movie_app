@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/widgets/fullScreen.dart';
-
+import 'package:transparent_image/transparent_image.dart';
 import '../utils/fontDesign.dart';
 
 class TrendingMovies extends StatelessWidget {
@@ -11,9 +11,10 @@ class TrendingMovies extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        margin: EdgeInsets.only(top: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -51,10 +52,19 @@ class TrendingMovies extends StatelessWidget {
                           Container(
                             width: 115,
                             height: 160,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        "$imagePre${treanding[index]['poster_path']}"))),
+                            child: Stack(children: [
+                              Center(child: CircularProgressIndicator()),
+                              FadeInImage.memoryNetwork(
+                                  height: 160,
+                                  fadeInDuration: Duration(milliseconds: 400),
+                                  placeholder: kTransparentImage,
+                                  image:
+                                      "$imagePre${treanding[index]['poster_path']}")
+                            ]),
+                            // decoration: BoxDecoration(
+                            //     image: DecorationImage(
+                            //         image: NetworkImage(
+                            //             "$imagePre${treanding[index]['poster_path']}"))),
                           ),
                           Container(
                               height: 20,

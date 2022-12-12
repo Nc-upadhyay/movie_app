@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../utils/fontDesign.dart';
 import 'fullScreen.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class TopRatedMovies extends StatelessWidget {
   final String imagePre = 'https://image.tmdb.org/t/p/w500';
@@ -52,13 +53,24 @@ class TopRatedMovies extends StatelessWidget {
                         child: Column(
                           children: [
                             Container(
-                              width: 111,
-                              height: 160,
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: NetworkImage(
-                                          '${imagePre}${top_rated[index]['poster_path']}'))),
-                            ),
+                                width: 111,
+                                height: 160,
+                                child: Stack(children: [
+                                  Center(child: CircularProgressIndicator()),
+                                  FadeInImage.memoryNetwork(
+                                    height: 160,
+                                    fadeInDuration: Duration(milliseconds: 400),
+                                    placeholder: kTransparentImage,
+                                    image:
+                                        '${imagePre}${top_rated[index]['poster_path']}',
+                                    fit: BoxFit.cover,
+                                  )
+                                ])
+                                // decoration: BoxDecoration(
+                                //     image: DecorationImage(
+                                //         image: NetworkImage(
+                                //             '${imagePre}${top_rated[index]['poster_path']}'))),
+                                ),
                             Container(
                               height: 20,
                               child: DesignTF(
