@@ -33,12 +33,10 @@ class AboutMan extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-
           DesignTF(
               text: name != null ? 'Name:  $name' : 'Loading..',
               color1: Colors.white,
               size: 17),
-
           DesignTF(
               text: popularity != null
                   ? 'Polulartiy:  $popularity B'
@@ -108,19 +106,6 @@ class AboutMan extends StatelessWidget {
               itemCount: detail.length,
             ),
           )
-
-          // Container(
-          //   height: 400,
-          //   child: ListView.builder(
-          //     scrollDirection: Axis.vertical,
-          //     itemBuilder: (context, index) {
-          //       return Container(
-          //         child: Text('Naveen'),
-          //       );
-          //     },
-          //     itemCount: 30,
-          //   ),
-          // )
         ]),
       ),
     );
