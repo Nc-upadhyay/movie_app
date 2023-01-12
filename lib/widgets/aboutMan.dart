@@ -101,7 +101,6 @@ class AboutMan extends StatelessWidget {
                                           ? '${detail[index]['overview'].substring(0, 200)}...'
                                           : detail[index]['overview']
                                       : ' loading..',
-                                  //   detail[index]['overview'].substring(0, 40)
                                 ),
                               ),
                             ),
@@ -109,18 +108,22 @@ class AboutMan extends StatelessWidget {
                         ),
                         DesignTF(
                             text:
-                                'Movie Name:  ${detail[index]['original_title']}',
+                                'Movie Name:  ${detail[index]['original_title'] != null ? "${detail[index]['original_title']}" : " loading.."}',
                             color1: Colors.white,
                             size: 12),
                         DesignTF(
                             text:
-                                'Release Date:  ${detail[index]['release_date']}',
+                                'Release Date:  ${detail[index]['release_date'] != null ? "${detail[index]['release_date']}" : "loading..."}',
                             color1: Colors.white,
                             size: 12),
                         DesignTF(
-                            text: 'Vote : ${detail[index]['vote_average']}',
+                            text:
+                                'Vote : ${detail[index]['vote_average'] != null ? "${detail[index]['vote_average']}" : "loading.."}',
                             color1: Colors.white,
                             size: 12),
+                        SizedBox(
+                          height: 20,
+                        )
                       ],
                     ),
                   ),

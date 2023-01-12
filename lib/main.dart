@@ -129,6 +129,9 @@ class _HomeState extends State<Home> {
         PopularMan(
           manlist: popular_man,
         ),
+        SizedBox(
+          height: 20,
+        )
       ],
     ));
   }
