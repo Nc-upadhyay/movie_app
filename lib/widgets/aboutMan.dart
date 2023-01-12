@@ -36,7 +36,7 @@ class AboutMan extends StatelessWidget {
             ),
           ),
           DesignTF(
-              text: name != null ? 'Name:  $name' : 'Loading..',
+              text: name.isNotEmpty ? 'Name:  Loading...' : '$name',
               color1: Colors.white,
               size: 17),
           DesignTF(
