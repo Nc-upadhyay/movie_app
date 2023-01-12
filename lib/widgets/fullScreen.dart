@@ -59,7 +59,7 @@ class FullScreen extends StatelessWidget {
             Container(
                 padding: EdgeInsets.only(left: 10),
                 child: DesignTF(
-                  text: 'Releasing on -  ${launch != null ? launch : '...'}',
+                  text: 'Releasing on -  ${launch != null ? launch : "..."}',
                   color1: Colors.white,
                   size: 15,
                 )),
